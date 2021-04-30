@@ -8,6 +8,8 @@
 
     <about-me />
 
+    <core-dialog />
+
     <get-in-touch />
   </div>
 </template>
@@ -22,6 +24,8 @@
       RecentProjects: () => import('@/components/RecentProjects'),
       Services: () => import('@/components/Services'),
       Welcome: () => import('@/components/Welcome'),
+      CoreDialog: () => import('@/components/base/Dialogue'),
+
     },
   }
 </script>

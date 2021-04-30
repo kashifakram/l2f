@@ -20,6 +20,6 @@
   .clippedButton {
     padding: 0 4%;
     clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
-    border: 1px solid black;
+    border: 3px solid greenyellow;
   }
 </style>

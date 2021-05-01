@@ -2,7 +2,7 @@
   <v-app dark>
     <core-system-bar />
     <core-app-bar />
-    <nuxt />
+    <core-view />
     <core-footer />
   </v-app>
 </template>
@@ -11,8 +11,10 @@
 export default {
   components: {
     CoreAppBar: () => import('@/components/core/AppBar'),
+    CoreView: () => import('@/components/core/View'),
     CoreSystemBar: () => import('@/components/core/SystemBar'),
     CoreFooter: () => import('@/components/core/Footer'),
+
   }
 }
 </script>

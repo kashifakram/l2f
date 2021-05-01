@@ -1,5 +1,6 @@
 <template>
-  <div class="middle">
+    <v-main app>
+      <core-main-menu />
     <welcome />
 
     <recent-projects />
@@ -11,7 +12,7 @@
     <core-dialog />
 
     <get-in-touch />
-  </div>
+    </v-main>
 </template>
 
 <script>
@@ -25,6 +26,7 @@
       Services: () => import('@/components/Services'),
       Welcome: () => import('@/components/Welcome'),
       CoreDialog: () => import('@/components/base/Dialogue'),
+      CoreMainMenu: () => import('@/components/core/MainMenu'),
 
     },
   }

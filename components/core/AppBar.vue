@@ -1,10 +1,12 @@
 <template>
   <v-app-bar
     class="clippedHeader"
+    height="80"
     v-scroll="onScroll"
     :color="!isScrolling ? 'blue' : 'lightgrey'"
     fixed
     flat
+    app
   >
     <v-slide-x-transition>
       <v-img
@@ -55,16 +57,10 @@
     },
   }
 </script>
-<style>
+<style scoped>
   .clippedHeader {
     padding: 0 10%;
     padding-left: 4%;
-    height: 5%;
     clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
-  }
-    .clippedFooter {
-    padding-left: 10%;
-    height: 10%;
-    clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
   }
 </style>

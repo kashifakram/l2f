@@ -1,19 +1,19 @@
 <template>
-  <v-footer
-    height="88"
-    class="left-center clippedFooter"
-    app
+  <v-sheet
+    class="left-center clippedMenu"
+    height="80"
+    color="purple"
   >
     <social-media />
     <v-spacer />
       <span>&copy; {{ new Date().getFullYear() }}</span>
 
-  </v-footer>
+  </v-sheet>
 </template>
 
 <script>
 export default {
-  name: "CoreFooter",
+  name: "CoreMainMenu",
 
   components: {
     SocialMedia: () => import("@/components/SocialMedia"),
@@ -21,9 +21,8 @@ export default {
 };
 </script>
 <style scoped>
-.clippedFooter {
+.clippedMenu {
   padding: 0 10%;
-  height: 10%;
   clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
 }
 </style>

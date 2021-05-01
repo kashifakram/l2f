@@ -4,7 +4,9 @@
 
 <script>
 export default {
-
+    layout(context){
+        return 'business'
+    }
 }
 </script>
 

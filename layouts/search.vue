@@ -1,23 +1,21 @@
 <template>
-  <v-app dark>
+    <v-app dark>
     <core-system-bar />
     <core-app-bar />
-    <core-view />
-    <core-footer />
+    <Nuxt />
   </v-app>
 </template>
 
 <script>
 export default {
+    name: 'member',
   components: {
     CoreAppBar: () => import('@/components/core/AppBar'),
-    CoreView: () => import('@/components/core/View'),
     CoreSystemBar: () => import('@/components/core/SystemBar'),
-    CoreFooter: () => import('@/components/core/Footer'),
-
   }
 }
 </script>
+
 <style>
 
 </style>

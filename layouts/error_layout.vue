@@ -1,12 +1,14 @@
 <template>
+  <v-app dark>
+      <h1>Lost?</h1>
+      <Nuxt />
+  </v-app>
   
 </template>
 
 <script>
 export default {
-    layout(context){
-        return 'search'
-    }
+
 }
 </script>
 

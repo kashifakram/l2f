@@ -1,10 +1,10 @@
 <template>
   <v-btn
-    color="secondary"
+    :color = "out ? 'primary' : 'secondary'"
     class="clippedButton"
     v-bind="$attrs"
     v-on="$listeners"
-    outlined
+    :outlined = "out"
   >
     <slot />
   </v-btn>
@@ -13,6 +13,13 @@
 <script>
   export default {
     name: 'BaseBtn',
+    props: {
+      out: {
+        required: false,
+        type: Boolean,
+        default: true
+      }
+    }
   }
 </script>
 
@@ -20,6 +27,5 @@
   .clippedButton {
     padding: 0 4%;
     clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
-    border: 3px solid greenyellow;
   }
 </style>

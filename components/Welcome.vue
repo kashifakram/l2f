@@ -43,7 +43,7 @@
               vida porta. Lorem ipsum dolor sit amet, cons
               ectetur adipiscing elit.
             </base-text>
-            <base-btn class="mt-4">
+            <base-btn class="mt-4" @click="$vuetify.theme.dark = false">
               Learn More!
             </base-btn>
           </v-col>

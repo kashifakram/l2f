@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    class="display-1 v-heading mb-3 font-weight-light"
+    class="text-h5 v-heading mb-3 font-weight-light"
   >
     <slot />
   </component>
@@ -14,7 +14,7 @@
     props: {
       tag: {
         type: String,
-        default: 'h1',
+        default: 'h5',
       },
     },
   }

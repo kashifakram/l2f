@@ -2,6 +2,9 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+@import './main';
+$body-font-family: 'verala';
+$heading-font-family: 'lemon';
+
 @import '~vuetify/src/styles/styles.sass';
 
-$system-bar-font-size: map-deep-get($headings, 'body-2', 'size');

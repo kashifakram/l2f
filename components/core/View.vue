@@ -1,6 +1,6 @@
 <template>
     <v-main app>
-      <core-main-menu />
+    <core-main-menu />
     <welcome />
 
     <recent-projects />

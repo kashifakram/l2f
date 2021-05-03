@@ -17,6 +17,7 @@ export default {
   asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
       
   },
+  fetch(){context},
   middleware: ''
 }
 </script>

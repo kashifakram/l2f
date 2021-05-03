@@ -3,7 +3,7 @@
     class="clippedHeader"
     height="80"
     v-scroll="onScroll"
-    :color="!isScrolling ? 'blue' : 'lightgrey'"
+    :color="!isScrolling ? 'green darken-4' : 'teal darken-4'"
     fixed
     flat
     app

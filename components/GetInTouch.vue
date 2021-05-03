@@ -4,7 +4,7 @@
     class="overflow-hidden"
   >
     <v-row
-      class="info white--text"
+      class="secondary white--text"
       no-gutters
     >
       <v-col

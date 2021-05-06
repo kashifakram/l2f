@@ -22,6 +22,7 @@
           color="transparent"
           class="text-center mx-auto"
           width="700"
+          elevation="0"
           
         >
           <v-btn

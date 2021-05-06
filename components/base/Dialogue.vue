@@ -2,8 +2,9 @@
   <div class="text-center">
     <v-dialog
       v-model="dialog"
-      width="40%"
       overlay-color="transparent"
+      class="align-center"
+      transition="dialog-bottom-transition"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -73,4 +74,6 @@
       background-color: black;
       clip-path: polygon(15% 14%, 0 0, 100% 0, 85% 15%, 85% 85%, 100% 100%, 0 100%, 16% 85%);
   }
+
+
 </style>

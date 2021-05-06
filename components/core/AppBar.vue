@@ -1,31 +1,31 @@
 <template>
   <v-app-bar
     class="clippedHeader"
-    height="80"
+    :class="appClasses"
+    elevation=24
     v-scroll="onScroll"
-    :color="!isScrolling ? 'green darken-4' : 'teal darken-4'"
-    fixed
+    :color="isFixed ? 'teal darken-2' : 'teal darken-4'"
     flat
     app
   >
-    <v-slide-x-transition>
+
+  <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown"></v-app-bar-nav-icon>
+  <template v-slot:img="{ props }">
       <v-img
-        v-if="showLogo"
-        :src="require('@/assets/logo.png')"
-        class="shrink"
-        height="55"
+        v-bind="props"
         contain
+        height="50"
+
       />
-    </v-slide-x-transition>
+  </template>
+
+    <v-app-bar-title class="text-h6">lonely->family</v-app-bar-title>
 
     <v-spacer />
 
-    <social-media />
-
     <base-btn
-      class="ml-3"
-      large
       href="https://store.vuetifyjs.com/product/freelancer-theme-free?ref=freelancer"
+      class="text-caption"
     >
       Download for Free
 
@@ -39,28 +39,35 @@
   </v-app-bar>
 </template>
 <script>
-  export default {
-    name: 'CoreAppBar',
-    components: {
-      SocialMedia: () => import('@/components/SocialMedia'),
+import defaultLayout from "~/assets/js/vuetify_classes/layouts/default_layout";
+
+export default {
+  name: "CoreAppBar",
+  components: {
+  },
+  data: () => ({
+    showLogo: false,
+    isScrolling: false,
+    appClasses: defaultLayout.appBar,
+  }),
+  methods: {
+    onScroll() {
+      const offset = window.pageYOffset;
+      this.isScrolling = offset > 50;
+      this.showLogo = offset > 200;
     },
-    data: () => ({
-      showLogo: false,
-      isScrolling: false,
-    }),
-    methods: {
-      onScroll () {
-        const offset = window.pageYOffset
-        this.isScrolling = offset > 50
-        this.showLogo = offset > 200
-      },
+  },
+  computed: {
+    isFixed() {
+      return this.$vuetify.breakpoint.mdAndUp;
     },
-  }
+  },
+};
 </script>
 <style scoped>
-  .clippedHeader {
-    padding: 0 10%;
-    padding-left: 4%;
-    clip-path: polygon(0% 0%, 10% 100%, 90% 100%, 100% 0%);
-  }
+.clippedHeader {
+  padding: 0 17%;
+  clip-path: polygon(0% 0%, 17% 100%, 83% 100%, 100% 0%);
+}
+
 </style>

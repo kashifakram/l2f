@@ -2,8 +2,9 @@
   <v-app dark>
     <core-system-bar />
     <core-app-bar />
-    <nuxt />
-    <core-footer />
+  <v-main app>
+    <Nuxt />
+  </v-main>
   </v-app>
 </template>
 
@@ -16,6 +17,6 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 
 </style>

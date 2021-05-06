@@ -1,41 +1,89 @@
 <template>
-    <v-main app>
-    <core-main-menu />
-    <welcome />
+  <v-row :class="mainRow">
+    <v-col cols="12" md="2" :class="sideCols">
+    <v-img :src="require('@/assets/l2f_tr.png')" class="logoFixed"></v-img>
 
-    <recent-projects />
+      <v-row :class="nestedRows" class="flex-column leftFixed grey darken-4">
+        <v-col>
+          1 jfdsljf sdlkfjs dfksdjfdl jfjlksdjlfdkjsfjdlfj
+        </v-col>
+        <v-col>
+          2
+        </v-col>
+        <v-col>
+          3
+        </v-col>
+        <v-col>
+          4
+        </v-col>
+        <v-col>
+          5
+        </v-col>
+      </v-row>
+    </v-col>
+    <v-col cols="12" md="8" :class="middleCol">
 
-    <services />
+      <welcome :class="nestedRows" />
 
-    <about-me />
+      <recent-projects :class="nestedRows" />
 
-    <core-dialog />
+      <services :class="nestedRows" />
 
-    <get-in-touch />
-    </v-main>
+      <about-me :class="nestedRows" />
+
+      <core-dialog :class="nestedRows" />
+
+      <get-in-touch :class="nestedRows" />
+    </v-col>
+    <v-col cols="12" md="2" :class="sideCols">
+      
+    </v-col>
+  </v-row>
 </template>
 
 <script>
-  export default {
-    name: 'CoreView',
+import defaultLayout from "~/assets/js/vuetify_classes/layouts/default_layout";
+export default {
+  name: "CoreView",
 
-    components: {
-      AboutMe: () => import('@/components/AboutMe'),
-      GetInTouch: () => import('@/components/GetInTouch'),
-      RecentProjects: () => import('@/components/RecentProjects'),
-      Services: () => import('@/components/Services'),
-      Welcome: () => import('@/components/Welcome'),
-      CoreDialog: () => import('@/components/base/Dialogue'),
-      CoreMainMenu: () => import('@/components/core/MainMenu'),
-
-    },
-  }
+  components: {
+    AboutMe: () => import("@/components/AboutMe"),
+    GetInTouch: () => import("@/components/GetInTouch"),
+    RecentProjects: () => import("@/components/RecentProjects"),
+    Services: () => import("@/components/Services"),
+    Welcome: () => import("@/components/Welcome"),
+    CoreDialog: () => import("@/components/base/Dialogue"),
+    CoreMainMenu: () => import("@/components/core/MainMenu"),
+    BaseCard: () => import("@/components/base/Card"),
+    BaseCardTop: () => import("@/components/base/CardTop"),
+    
+  },
+  data: () => ({
+    sideCols: defaultLayout.sideCol,
+    mainRow: defaultLayout.firstRow,
+    nestedRows: defaultLayout.nestedRow,
+    middleCol: defaultLayout.middleCol,
+    items: [
+      { title: "Home", icon: "mdi-view-dashboard" },
+      { title: "About", icon: "mdi-forum" },
+    ],
+  }),
+};
 </script>
 <style scoped>
-  .middle {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 3%;
-    margin-bottom: 5%;
-  }
+.sideNotched {
+  clip-path: polygon(15% 15%, 0 0, 0 100%, 15% 85%);
+}
+.leftFixed {
+  position: fixed;
+  width: 15%;
+  padding: 2%;
+}
+  .logoFixed {
+  position: fixed;
+  top: 2%;
+  left: 3%;
+  transform: rotate(-50deg);
+  width: 90px;
+}
 </style>

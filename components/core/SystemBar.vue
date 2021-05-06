@@ -1,9 +1,16 @@
 <template>
-  <v-system-bar class="mb-4" window app flat>
-      <span>
-    A Wenovators Production
+<div>
+  <v-system-bar class="mb-4" app flat>
+      <span class="text-center">
+        Wenovators Production
+    </span>
+    <v-spacer></v-spacer>
+    <span class="text-center">
+        !
     </span>
   </v-system-bar>
+</div>
+
 </template>
 
 <script>
@@ -16,4 +23,5 @@ name: 'CoreSystemBar'
     .bottom {
         margin-bottom: 5%;
     }
+
 </style>

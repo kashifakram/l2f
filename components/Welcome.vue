@@ -1,7 +1,7 @@
 <template>
   <section
     id="welcome"
-    class="overflow-hidden"
+    class="overflow-hidden fullScreen"
   >
     <v-row no-gutters>
       <v-col
@@ -43,7 +43,7 @@
               vida porta. Lorem ipsum dolor sit amet, cons
               ectetur adipiscing elit.
             </base-text>
-            <base-btn class="mt-4" @click="$vuetify.theme.dark = false">
+            <base-btn class="mt-4">
               Learn More!
             </base-btn>
           </v-col>
@@ -61,3 +61,8 @@ export default {
 
 }
 </script>
+<style scoped>
+.fullScreen {
+  min-height: 100vh;
+}
+</style>

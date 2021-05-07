@@ -21,14 +21,16 @@
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
+<a href="#">
 <v-card v-if="$vuetify.breakpoint.smAndUp" flat min-height="50%">
   <v-card-title class="text-subtitle-1">
     Love and Beloved
   </v-card-title>
   <v-card-subtitle>
-    Get involved!
+    Visit your families!
   </v-card-subtitle>
 </v-card>
+</a>
   </v-app-bar>
 <v-navigation-drawer
       v-model="drawer"

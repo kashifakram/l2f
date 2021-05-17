@@ -2,24 +2,23 @@
   <v-row :class="mainRow">
     <v-col cols="12" md="2" :class="sideCols">
     <v-img :src="require('@/assets/l2f_tr.png')" :class="logo"></v-img>
-
-      <v-row :class="nestedRows" class="flex-column leftFixed grey darken-4">
-        <v-col>
+      <div class="grey leftFixed darken-4">
+        <div>
           1 jfdsljf sdlkfjs dfksdjfdl jfjlksdjlfdkjsfjdlfj
-        </v-col>
-        <v-col>
-          <update-card />
-        </v-col>
-        <v-col>
+        </div>
+        <div>
+          <base-update />
+        </div>
+        <div>
           3
-        </v-col>
-        <v-col>
+        </div>
+        <div>
           4
-        </v-col>
-        <v-col order-lg="5" class="mt-16">
+        </div>
+        <div class="mt-16">
           5
-        </v-col>
-      </v-row>
+        </div>
+      </div>
     </v-col>
     <v-col cols="12" md="8" :class="middleCol">
 
@@ -31,7 +30,7 @@
 
       <about-me :class="nestedRows" />
 
-      <core-dialog :class="nestedRows" />
+      <BaseDialogue :class="nestedRows" />
 
       <get-in-touch :class="nestedRows" />
     </v-col>
@@ -45,6 +44,8 @@
             :rules="nameRules"
             :counter="10"
             label="First name"
+            filled
+            shaped
             required
           ></v-text-field>
 
@@ -54,6 +55,8 @@
             :rules="nameRules"
             :counter="10"
             label="Last name"
+            outlined
+            shaped
             required
           ></v-text-field>
 
@@ -62,6 +65,8 @@
             v-model="email"
             :rules="emailRules"
             label="E-mail"
+            filled
+            shaped
             required
           ></v-text-field>
 
@@ -115,19 +120,6 @@
 import defaultLayout from "~/assets/js/vuetify_classes/layouts/default_layout";
 export default {
   name: "CoreView",
-
-  components: {
-    AboutMe: () => import("@/components/AboutMe"),
-    GetInTouch: () => import("@/components/GetInTouch"),
-    RecentProjects: () => import("@/components/RecentProjects"),
-    Services: () => import("@/components/Services"),
-    Welcome: () => import("@/components/Welcome"),
-    CoreDialog: () => import("@/components/base/Dialogue"),
-    CoreMainMenu: () => import("@/components/core/MainMenu"),
-    BaseCard: () => import("@/components/base/Card"),
-    BaseCardTop: () => import("@/components/base/CardTop"),
-    UpdateCard: () => import("@/components/base/Update"),
-  },
   data: () => ({
     sideCols: defaultLayout.sideCol,
     mainRow: defaultLayout.firstRow,
@@ -184,18 +176,24 @@ export default {
 };
 </script>
 <style scoped>
+
 .sideNotched {
   clip-path: polygon(15% 15%, 0 0, 0 100%, 15% 85%);
 }
 .leftFixed {
+  height: 85%;
   position: fixed;
   width: 15%;
-  padding: 2%;
+  top: 15%;
+  padding: 1%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .logoFixedXs {
   position: fixed;
   top: 4%;
   left: 3%;
+  min-height: 100%;
   transform: rotate(-40deg);
   width: 32px;
 }

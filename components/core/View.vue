@@ -2,7 +2,7 @@
   <v-row :class="mainRow">
     <v-col cols="12" md="2" :class="sideCols">
     <v-img :src="require('@/assets/l2f_tr.png')" :class="logo"></v-img>
-      <div class="grey leftFixed darken-4">
+      <div :class="nestedRows" class="grey leftFixed darken-4">
         <div>
           1 jfdsljf sdlkfjs dfksdjfdl jfjlksdjlfdkjsfjdlfj
         </div>
@@ -38,13 +38,13 @@
       <v-row :class="nestedRows" class="flex-column leftFixed grey darken-4">
         <v-col>
           <h5>Register Today!</h5>
-          <v-form v-model="valid" ref="form" lazy-validation>
+          <v-form v-model="valid" id="side_form" ref="form" lazy-validation>
           <v-text-field
             v-model="firstname"
             :rules="nameRules"
             :counter="10"
             label="First name"
-            filled
+            outlined
             shaped
             required
           ></v-text-field>
@@ -65,7 +65,7 @@
             v-model="email"
             :rules="emailRules"
             label="E-mail"
-            filled
+            outlined
             shaped
             required
           ></v-text-field>
@@ -175,13 +175,15 @@ export default {
   },
 };
 </script>
-<style scoped>
+
+<style scoped lang="scss">
 
 .sideNotched {
   clip-path: polygon(15% 15%, 0 0, 0 100%, 15% 85%);
 }
+
 .leftFixed {
-  height: 85%;
+  height: 80%;
   position: fixed;
   width: 15%;
   top: 15%;
@@ -189,6 +191,7 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 .logoFixedXs {
   position: fixed;
   top: 4%;
@@ -197,6 +200,7 @@ export default {
   transform: rotate(-40deg);
   width: 32px;
 }
+
 .logoFixedSmAndUp {
   position: fixed;
   top: 3.5%;
@@ -204,6 +208,7 @@ export default {
   transform: rotate(-45deg);
   width: 50px;
 }
+
 .logoFixedMdAndUp {
   position: fixed;
   top: 2%;
@@ -211,4 +216,11 @@ export default {
   transform: rotate(-50deg);
   width: 90px;
 }
+
+#side_form {
+  * {
+    margin-top: 16px;
+  }
+}
+
 </style>

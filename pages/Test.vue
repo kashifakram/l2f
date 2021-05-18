@@ -7,7 +7,7 @@
 <script>
 export default {
     layout(context){
-        return 'family'
+        return 'test'
     }
 }
 </script>

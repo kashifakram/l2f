@@ -1,0 +1,30 @@
+{
+    "main": {
+        "home": {
+            "link": "/login"
+        },
+        "about": {
+            "link": "/about"
+        },
+        "legal": {
+            "link": "/legal",
+            "sublinks": [
+                {
+                    "wills_estate": {
+                        "link": "/legal/wills-estate",
+                        "sublinks": [
+                            {
+                                "title": "wills dispute",
+                                "link": "/legal/wills-dispute"
+                            },
+                            {
+                                "title": "succession estate",
+                                "link": "/legal/wills-dispute"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
